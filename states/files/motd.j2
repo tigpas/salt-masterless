@@ -1,0 +1,13 @@
+{%- if pillar.demo %}
+  _____  ______ __  __  ____  
+ |  __ \|  ____|  \/  |/ __ \ 
+ | |  | | |__  | \  / | |  | |
+ | |  | |  __| | |\/| | |  | |
+ | |__| | |____| |  | | |__| |
+ |_____/|______|_|  |_|\____/ 
+                              
+{% endif %}
+Host: ............. {{ grains['id'] }}
+CPU / Mem / Swap: . {{ grains['cpu_model'] }} ({{ grains['num_cpus'] }} Threads) / {{ grains['mem_total'] }} MB / {{ grains['swap_total'] }} MB
+OS: ............... {{ grains['osfullname'] }} {{ grains['osrelease'] }} (Kernel: {{ grains['kernel'] }} {{ grains['kernelrelease'] }})
+Salt: ............. {{ grains['saltversion'] }}

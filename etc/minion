@@ -1,0 +1,30 @@
+# set Salt to masterless
+file_client: remote
+
+# set file roots
+file_roots:
+  base:
+    - /opt/salt-masterless/states
+    - /opt/salt-masterless/formulas/apache-formula
+    - /opt/salt-masterless/formulas/docker-formula
+    - /opt/salt-masterless/formulas/dovecot-formula
+    - /opt/salt-masterless/formulas/postfix-formula
+    - /opt/salt-masterless/formulas/mysql-formula
+    - /opt/salt-masterless/formulas/salt-formula-linux
+    - /opt/salt-masterless/formulas/samba-formula
+    - /opt/salt-masterless/formulas/users-formula
+
+# set pillar root
+pillar_roots:
+  base:
+    - /opt/salt-masterless/pillar
+
+# set logging
+# One of 'garbage', 'trace', 'debug', info', 'warning', 'error', 'critical'.
+log_file: /var/log/salt/masterless.log
+log_level_logfile: info
+log_level: warning
+
+# show less informations about non changed states, and full output of changed states
+state_verbose: false
+state_output: full
